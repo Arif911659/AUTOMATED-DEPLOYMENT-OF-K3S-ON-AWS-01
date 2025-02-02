@@ -76,18 +76,6 @@ jobs:
       - name: Run the Ansible playbook
         run: |
             ssh -o StrictHostKeyChecking=no ubuntu@${{ env.GIT_RUNNER_IP }} << 'EOF'
-                set -e
-                # Check installation
-                which ansible-playbook || echo "ansible-playbook not found in PATH"
-                echo "PATH: $PATH"
-                echo "Running Ansible playbook..."
-
-                # Run the playbook if ansible-playbook is found
-                if command -v ansible-playbook > /dev/null; then
-                    cd ansible && ansible-playbook -i inventory/hosts.ini site.yml
-                else
-                    echo "Ansible is not installed. Exiting..."
-                    exit 1
-                fi
+            cd ansible && ansible-playbook -i inventory/hosts.ini site.yml
             EOF
 
