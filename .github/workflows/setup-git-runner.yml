@@ -27,7 +27,7 @@ jobs:
         run: pulumi login
 
       - name: Pulumi stack select
-        run: pulumi stack select arifhossaincse22/DEPLOYMENT-OF-K3S-ON-AWS-01/DEPLOYMENT-OF-K3S-ON-AWS-01 --cwd Infra
+        run: pulumi stack select arifhossaincse22/DEPLOYMENT-OF-K3S-ON-AWS-01/DEPLOYMENT-OF-K3S-ON-AWS-02 --cwd Infra
 
       - name: Pulumi refresh
         run: pulumi refresh --yes --cwd Infra
