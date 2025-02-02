@@ -1,3 +1,4 @@
+---
 name: K3s deployment using Ansible
 
 on:
@@ -80,7 +81,7 @@ jobs:
                 which ansible-playbook || echo "ansible-playbook not found in PATH"
                 echo "PATH: $PATH"
                 echo "Running Ansible playbook..."
-                
+
                 # Run the playbook if ansible-playbook is found
                 if command -v ansible-playbook > /dev/null; then
                     cd ansible && ansible-playbook -i inventory/hosts.ini site.yml
